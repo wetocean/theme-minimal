@@ -19,6 +19,8 @@
 
         {% if page.logo %}
           <img src="{{page.logo | relative_url}}" alt="Logo" />
+        {% else %}
+          <img src="{{"logo/dotsorcom.png" | relative_url}}" alt="Logo" />
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
