@@ -39,6 +39,7 @@
 
       {{ content }}
 
+      Domain Name: <span id="requested-url"></span>
       <hr />
         The availability of this premium domain name is subject to change. Act fast to secure, before it's gone!
       <hr />
@@ -56,6 +57,19 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Get the pathname of the URL (i.e., /path/to/resource)
+        let pathName = window.location.pathname;
+        // Split the pathname into segments separated by '/'
+        let segments = pathName.split('/');
+        // Filter out any empty segments and get the last segment
+        let lastSegment = segments.filter(Boolean).pop();
+        // Display the last segment in the span
+        document.getElementById("requested-url").textContent = lastSegment || "unknown";
+    });
+    </script>
 
     <script type="text/javascript">
     (function() {
